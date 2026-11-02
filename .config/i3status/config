@@ -1,0 +1,50 @@
+general {
+    output_format = "i3bar"
+
+    interval = 1
+
+    colors = true 
+    color_good = "#d0d0d0"
+    color_degraded = "#8c8c8c"
+    color_bad = "#5e5e5e"
+}
+
+order += "volume master"
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "disk /"
+order += "memory"
+order += "load"
+order += "time"
+
+volume master {
+    format = "%volume"
+    format_muted = "%volume (Muted)"
+}
+
+wireless _first_ {
+    format_up = "%ip (%quality @ %essid)"
+    format_down = "Down"
+}
+
+ethernet _first_ {
+    format_up = "%ip"
+    format_down = "Down"
+}
+
+disk "/"{
+    format = "%used (%percentage_used)"
+}
+
+memory {
+    format = "%used (%percentage_used)"
+    unit = "Gi"
+}
+
+load {
+    format = "%1min %5min"
+}
+
+time {
+    format = "%Y-%m-%d %H:%M:%S (%A)"
+}

@@ -1,0 +1,18 @@
+[user]
+    name = motxi
+    email = 32019610+motxi@users.noreply.github.com
+
+[init]
+    defaultBranch = master
+
+[color "branch"]
+    current = yellow
+    local = yellow
+
+[color "diff"]
+    new = yellow
+    old = brightblack
+
+[color "status"]
+    added = yellow
+    changed = brightblack 

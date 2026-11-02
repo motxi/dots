@@ -1,0 +1,14 @@
+! 96 = 100%
+! 120 = 125%
+! 144 = 150%
+! 192 = 200%
+Xft.dpi: 120 
+
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+
+Xcursor.theme: Adwaita
+Xcursor.size: 36 

@@ -1,0 +1,187 @@
+[global]
+    # Ignored in favor of the follow setting below.
+    monitor = 0
+
+    # The notifications will be placed on the monitor that contains the window
+    # with the keyboard focus.
+    follow = keyboard
+
+    # Enable POSIX regular expessions for filtering rules (recommended).
+    enable_posix_regex = true
+
+    width = 300
+    height = (0, 300)
+
+    origin = bottom-right
+    offset = (25, 50)
+
+    scale = 0
+
+    notification_limit = 20
+
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    progress_bar_corner_radius = 0
+    progress_bar_corners = all
+
+    icon_corner_radius = 0
+    icon_corners = all
+
+    # Show how many notifications are currently hidden.
+    indicate_hidden = true 
+
+    # Set the window transparency from 0 to 100 (X11 only).
+    transparency = 0
+
+    separator_height = 0
+    separator_color = frame
+
+    # Padding between text and separator.
+    padding = 8
+
+    horizontal_padding = 8
+
+    # Padding between text and icon.
+    text_icon_padding = 0
+
+    frame_width = 2
+    frame_color = "#aaaaaa"
+
+    # Size of gap to display between notifications (requires a compositor).
+    #
+    # If the value is greater than 0, separator_height will be ignored and a
+    # border of size frame_width will be drawn around each notification
+    # instead.
+    #
+    # Click events on gaps do not currently propagate to applications below.
+    gap_size = 8
+
+    sort = update 
+
+    # Don't remove messages, if the user is idle (no mouse or keyboard input)
+    # for longer than idle_threshold seconds.
+    #
+    # A client can set the transient hint to bypass this. See the rules section
+    # for how to disable this if necessary.
+    #
+    # Set to 0 to disable.
+    idle_threshold = 600
+
+    font = monospace 12
+
+    line_height = 0
+
+    # It's important to note that markup inside the format option will be
+    # parsed regardless of what this is set to.
+    markup = full
+
+    # The format of the message. Possible variables are:
+    #
+    #     %a  appname
+    #     %s  summary
+    #     %b  body
+    #     %c  category
+    #     %S  stack_tag
+    #     %i  iconname (including its path)
+    #     %I  iconname (without its path)
+    #     %p  progress value if set ([0%] to [100%]) or nothing
+    #     %n  progress value if set without any extra characters
+    #     %%  literal %
+    #
+    # Markup is allowed.
+    format = "<b>%s</b>\n%b"
+
+    # Alignment of message text.
+    # Possible values are "left", "center" and "right".
+    alignment = left
+
+    # Vertical alignment of message text and icon.
+    # Possible values are "top", "center" and "bottom".
+    vertical_alignment = center
+
+    # Show the age of the message if the message is older than
+    # show_age_threshold seconds.
+    #
+    # Set to -1 to disable.
+    show_age_threshold = 60
+
+    # Specify where to make an ellipsis in long lines.
+    # Possible values are "start", "middle" and "end".
+    ellipsize = middle
+
+    # Ignore newlines ("\n") in notifications.
+    ignore_newline = no
+
+    stack_duplicates = true
+    hide_duplicate_count = false
+
+    # Display indicators for URLs (U) and actions (A).
+    show_indicators = yes
+
+    enable_recursive_icon_lookup = true
+
+    icon_theme = Adwaita
+    icon_position = left
+
+    # Scale small icons up to this size, set to 0 to disable.
+    #
+    # Helpful for small files or high-dpi screens. In case of conflict,
+    # max_icon_size takes precedence over this.
+    min_icon_size = 32
+
+    # Scale larger icons down to this size, set to 0 to disable.
+    max_icon_size = 64
+
+    # Paths to default icons (only necessary when not using recursive icon lookup).
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+
+    # Should a notification popped up from history be sticky or timeout
+    # as if it would normally do.
+    sticky_history = true 
+
+    # Maximum amount of notifications kept in history.
+    history_length = 20
+
+    dmenu = /usr/bin/env rofi -dmenu -p dunst:
+    browser = /usr/bin/env xdg-open
+
+    # Always run rule-defined scripts, even if the notification is suppressed
+    always_run_script = true
+
+    title = Dunst
+    class = Dunst
+
+    corners = all
+    corner_radius = 0
+
+    # Without this parameter, an application may close the notification sent
+    # before the user defined timeout.
+    ignore_dbusclose = true 
+
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = close_all 
+    mouse_right_click = close_current 
+
+[urgency_low]
+    background = "#1c1c1c"
+    foreground = "#8c8c8c"
+    frame_color = "#1c1c1c"
+    highlight = "#5e5e5e"
+    timeout = 4
+
+[urgency_normal]
+    background = "#262626"
+    foreground = "#d0d0d0"
+    frame_color = "#262626"
+    highlight = "#8c8c8c"
+    timeout = 8
+
+[urgency_critical]
+    background = "#352424"
+    foreground = "#d0d0d0"
+    frame_color = "#3f2626"
+    highlight = "#a65b5b"
+    timeout = 0

@@ -1,0 +1,123 @@
+* {
+    background: #141414;
+    background-alternate: #1c1c1c;
+    surface: #262626;
+    inactive: #303030;
+    focus: #3d3d3d;
+    dim: #5e5e5e;
+    foreground-dim: #8c8c8c;
+    foreground: #d0d0d0;
+    accent: #e0c341;
+    urgent-color: #a65b5b;
+
+    background-color: transparent;
+    text-color: @foreground;
+    font: "monospace 14";
+}
+
+window {
+    location: center;
+    width: 35%;
+    border: 1px;
+    border-color: @focus;
+    border-radius: 0;
+    background-color: @background;
+}
+
+mainbox {
+    children: [inputbar, message, listview];
+    spacing: 0;
+    background-color: transparent;
+}
+
+inputbar {
+    children: [prompt, entry];
+    padding: 14px 18px;
+    spacing: 12px;
+    background-color: @surface;
+}
+
+prompt {
+    text-color: @accent;
+}
+
+entry {
+    text-color: @foreground;
+    placeholder: "search";
+    placeholder-color: @dim;
+}
+
+message {
+    padding: 12px 18px;
+    background-color: @background-alternate;
+}
+
+textbox {
+    text-color: @foreground-dim;
+}
+
+listview {
+    lines: 10;
+    columns: 1;
+    fixed-height: true;
+    scrollbar: false;
+    padding: 6px 0;
+    background-color: transparent;
+}
+
+element {
+    padding: 10px 18px;
+    spacing: 12px;
+    background-color: transparent;
+    text-color: @foreground-dim;
+}
+
+element-icon {
+    size: 1.4em;
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    font: "monospace bold 14";
+    highlight: underline bold #e0c341;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color: @foreground-dim;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    text-color: @urgent-color;
+}
+
+element normal.active,
+element alternate.active {
+    text-color: @foreground;
+}
+
+element selected.normal {
+    background-color: @focus;
+    text-color: @foreground;
+}
+
+element selected.urgent {
+    background-color: @focus;
+    text-color: @urgent-color;
+}
+
+element selected.active {
+    background-color: @focus;
+    text-color: @foreground;
+}
+
+error-message {
+    padding: 18px;
+    border: 1px;
+    border-color: @urgent-color;
+    background-color: @background;
+}
