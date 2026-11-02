@@ -2,9 +2,9 @@
 
 export PATH="${HOME}/.scripts:${HOME}/.local/bin:${HOME}/bin:${PATH}"
 
-HISTFILE="${HOME}/.zhistory"
-HISTSIZE=10000
-SAVEHIST=10000
+export HISTFILE="${HOME}/.zhistory"
+export HISTSIZE=10000
+export SAVEHIST=10000
 
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
@@ -25,27 +25,27 @@ setopt INTERACTIVE_COMMENTS
 export ZSH="${HOME}/.omz"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes for a list of themes.
-ZSH_THEME="terminalparty"
+export ZSH_THEME="terminalparty"
 
-CASE_SENSITIVE="false"
+export CASE_SENSITIVE="false"
 
 # Case-sensitive completion must be off.
 # "_" and "-" will be interchangeable.
-HYPHEN_INSENSITIVE="true"
+export HYPHEN_INSENSITIVE="true"
 
-ENABLE_CORRECTION="false"
-COMPLETION_WAITING_DOTS="true"
-HIST_STAMPS="yyyy-mm-dd"
+export ENABLE_CORRECTION="false"
+export COMPLETION_WAITING_DOTS="true"
+export HIST_STAMPS="yyyy-mm-dd"
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 #
-# DISABLE_MAGIC_FUNCTIONS="true"
+# export DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 #
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+# export DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 zstyle ":omz:update" mode reminder
 zstyle ":omz:update" frequency 14
@@ -92,6 +92,17 @@ _command_exists shellcheck && alias sc="shellcheck \
     --exclude SC1090,SC1091,SC2034 \
     --severity style"
 
-source <(fzf --zsh) || true
+export FZF_DEFAULT_OPTS=" \
+    --color=bg:#141414,fg:#8c8c8c,hl:#e0c341 \
+    --color=bg+:#3d3d3d,fg+:#d0d0d0,hl+:#e0c341 \
+    --color=info:#5e5e5e,prompt:#e0c341,pointer:#e0c341 \
+    --color=marker:#e0c341,spinner:#8c8c8c,header:#5e5e5e \
+    --color=border:#3d3d3d,label:#8c8c8c,gutter:#141414 \
+    --color=query:#d0d0d0,disabled:#5e5e5e,separator:#303030,scrollbar:#5e5e5e \
+    --border=sharp \
+    --prompt='> ' \
+    --pointer='>' \
+    --marker='+'"
 
+source <(fzf --zsh) || true
 eval "$(zoxide init zsh --cmd cd || true)"

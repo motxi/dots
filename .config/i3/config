@@ -7,7 +7,7 @@ font pango:monospace 12
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id killall picom; picom --daemon
 exec_always --no-startup-id killall dunst; dunst --config ~/.config/dunst/config
-exec_always --no-startup-id headsetcontrol --light 0 && headsetcontrol --sidetone 128 
+exec_always --no-startup-id headsetcontrol --light 0 && headsetcontrol --sidetone 128
 
 exec --no-startup-id ~/.scripts/screen-layout.sh
 exec --no-startup-id dex --autostart --environment i3
@@ -43,7 +43,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_AUD
 # Programs and Scripts
 bindsym $mod+Return exec --no-startup-id kitty
 bindsym $mod+d exec --no-startup-id rofi -show drun
-bindsym Print exec --no-startup-id ~/.scripts/take-screenshot.sh
+
+bindsym Print exec --no-startup-id ~/.scripts/screen-capture.sh
+bindsym Shift+Print exec --no-startup-id ~/.scripts/screen-recording.sh
 
 # i3-Specific Controls
 bindsym $mod+Control+c reload
@@ -53,7 +55,7 @@ bindsym $mod+Control+e exec --no-startup-id ~/.scripts/power-menu.sh
 # Window Modes
 bindsym $mod+f fullscreen toggle
 bindsym $mod+s sticky toggle
-bindsym $mod+a floating toggle; sticky enable
+bindsym $mod+a floating toggle; sticky enable; resize set 1680 1050
 
 bindsym $mod+Shift+s layout toggle split
 bindsym $mod+Shift+t layout toggle tabbed

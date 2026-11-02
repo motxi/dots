@@ -1,16 +1,14 @@
 #! /usr/bin/env bash
 
-set -u
-
-readonly LOCK_FILE="${XDG_RUNTIME_DIR:-/tmp}/debounce-volume.lock"
-readonly HOLD_TIME='0.05'
+LOCK_FILE="${XDG_RUNTIME_DIR:-/tmp}/debounce-volume.lock"
+HOLD_TIME='0.05'
 
 if [[ $# -ne 1 ]]; then
     echo "Usage: ${0##*/} <step, e.g. +1% or -1%>" >&2
     exit 1
 fi
 
-readonly STEP="$1"
+STEP="$1"
 
 # Take a non-blocking lock. If another instance already holds it, this run is
 # the duplicate event, so exit quietly without touching the volume.

@@ -1,9 +1,9 @@
 #! /usr/bin/env bash
 
-readonly dir="${HOME}/Pictures/Screen"
-readonly format='%F_%H%M%S.png'
+DIR="${HOME}/Pictures/Screen"
+FORMAT='%F_%H%M%S.png'
 
-mkdir --parents "${dir}"
+mkDIR --parents "${DIR}"
 
 scrot \
     --silent \
@@ -12,6 +12,6 @@ scrot \
     --pointer \
     --overwrite \
     --exec 'xclip -selection clipboard -target image/png -in "$f"' \
-    "${dir}/${format}"
+    "${DIR}/${FORMAT}"
 
 notify-send --app-name scrot 'Screenshot Saved!'

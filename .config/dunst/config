@@ -31,7 +31,7 @@
     icon_corners = all
 
     # Show how many notifications are currently hidden.
-    indicate_hidden = true 
+    indicate_hidden = true
 
     # Set the window transparency from 0 to 100 (X11 only).
     transparency = 0
@@ -59,7 +59,7 @@
     # Click events on gaps do not currently propagate to applications below.
     gap_size = 8
 
-    sort = update 
+    sort = update
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -140,7 +140,7 @@
 
     # Should a notification popped up from history be sticky or timeout
     # as if it would normally do.
-    sticky_history = true 
+    sticky_history = true
 
     # Maximum amount of notifications kept in history.
     history_length = 20
@@ -159,11 +159,11 @@
 
     # Without this parameter, an application may close the notification sent
     # before the user defined timeout.
-    ignore_dbusclose = true 
+    ignore_dbusclose = true
 
     mouse_left_click = do_action, close_current
-    mouse_middle_click = close_all 
-    mouse_right_click = close_current 
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
 
 [urgency_low]
     background = "#1c1c1c"

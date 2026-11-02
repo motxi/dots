@@ -15,7 +15,7 @@ fetch_player_info() {
         --format "$1" 2> /dev/null
 }
 
-readonly highlight='#e0c341'
+HIGHLIGHT='#e0c341'
 
 while read -r line; do
     prefix=""
@@ -26,16 +26,16 @@ while read -r line; do
     fi
 
     if (( has_playerctl )); then
-        status=$(playerctl status --player spotify)
+        STATUS=$(playerctl status --player spotify)
 
-        if [[ ${status} == "Playing" ]]; then
-            final=$(fetch_player_info '{{artist}} - {{title}}')
+        if [[ ${STATUS} == "Playing" ]]; then
+            FINAL=$(fetch_player_info '{{artist}} - {{title}}')
 
-            if [[ -n ${final} ]]; then
-                info=${final//\\/\\\\} # Escape backslashes.
+            if [[ -n ${FINAL} ]]; then
+                info=${FINAL//\\/\\\\} # Escape backslashes.
                 info=${info//\"/\\\"} # Escape quotes.
 
-                line="[{\"full_text\":\"${info}\",\"name\":\"spotify\",\"color\":\"${highlight}\"},${line:1}"
+                line="[{\"full_text\":\"${info}\",\"name\":\"spotify\",\"color\":\"${HIGHLIGHT}\"},${line:1}"
             fi
         fi
     fi
