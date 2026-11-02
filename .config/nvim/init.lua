@@ -7,7 +7,7 @@ o.number = true
 o.relativenumber = true
 o.termguicolors = true
 o.cursorline = true
-o.wrap = false
+o.wrap = true
 o.scrolloff = 8
 o.signcolumn = "yes"
 
