@@ -25,31 +25,31 @@ setopt INTERACTIVE_COMMENTS
 export ZSH="${HOME}/.omz"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes for a list of themes.
-export ZSH_THEME="terminalparty"
+export ZSH_THEME='terminalparty'
 
-export CASE_SENSITIVE="false"
+export CASE_SENSITIVE='false'
 
 # Case-sensitive completion must be off.
 # "_" and "-" will be interchangeable.
-export HYPHEN_INSENSITIVE="true"
+export HYPHEN_INSENSITIVE='true'
 
-export ENABLE_CORRECTION="false"
-export COMPLETION_WAITING_DOTS="true"
-export HIST_STAMPS="yyyy-mm-dd"
+export ENABLE_CORRECTION='false'
+export COMPLETION_WAITING_DOTS='true'
+export HIST_STAMPS='yyyy-mm-dd'
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 #
-# export DISABLE_MAGIC_FUNCTIONS="true"
+# export DISABLE_MAGIC_FUNCTIONS='true'
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 #
-# export DISABLE_UNTRACKED_FILES_DIRTY="true"
+# export DISABLE_UNTRACKED_FILES_DIRTY='true'
 
-zstyle ":omz:update" mode reminder
-zstyle ":omz:update" frequency 14
-zstyle ":omz:update" cooldown 14
+zstyle ':omz:update' mode reminder
+zstyle ':omz:update' frequency 14
+zstyle ':omz:update' cooldown 14
 
 plugins=(
     git
@@ -59,13 +59,14 @@ plugins=(
 
 source "${ZSH}/oh-my-zsh.sh"
 
-export LANG=en_US.UTF-8
+export LANG='en_US.UTF-8'
+export BROWSER='firefox'
 
 # Preferred editor for local and remote sessions.
 if [[ -n ${SSH_CONNECTION} ]]; then
-    export EDITOR="nano"
+    export EDITOR='nano'
 else
-    export EDITOR="nvim"
+    export EDITOR='nvim'
 fi
 
 alias reload='source "${HOME}/.zshrc"'
@@ -74,11 +75,11 @@ _command_exists() {
     command -v "$1" > /dev/null 2>&1
 }
 
-_command_exists yazi && alias y="yazi"
+_command_exists yazi && alias y='yazi'
 _command_exists yazi && alias yc='yazi "${HOME}/.config"'
 _command_exists yazi && alias ys='yazi "${HOME}/.scripts"'
 
-_command_exists bat && alias cat="bat --style full --theme ansi"
+_command_exists bat && alias cat='bat --style full --theme ansi'
 
 _command_exists eza && alias ls="eza \
     --almost-all \

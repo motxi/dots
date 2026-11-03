@@ -2,11 +2,7 @@ general {
     output_format = "i3bar"
 
     interval = 1
-
-    colors = true
-    color_good = "#d0d0d0"
-    color_degraded = "#8c8c8c"
-    color_bad = "#5e5e5e"
+    colors = false
 }
 
 order += "volume master"
@@ -46,5 +42,5 @@ load {
 }
 
 time {
-    format = "%Y-%m-%d %H:%M:%S (%A) "
+    format = "%Y-%m-%d %a %H:%M:%S "
 }
