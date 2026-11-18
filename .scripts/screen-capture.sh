@@ -3,7 +3,7 @@
 DIR="${HOME}/Pictures/Screen"
 FORMAT='%F_%H%M%S.png'
 
-mkDIR --parents "${DIR}"
+mkdir --parents "${DIR}"
 
 scrot \
     --silent \
@@ -11,7 +11,5 @@ scrot \
     --select \
     --pointer \
     --overwrite \
-    --exec 'xclip -selection clipboard -target image/png -in "$f"' \
+    --exec 'xclip -selection clipboard -target image/png -in "$f"; notify-send --app-name scrot --icon "$f" "Screenshot Saved!"' \
     "${DIR}/${FORMAT}"
-
-notify-send --app-name scrot 'Screenshot Saved!'

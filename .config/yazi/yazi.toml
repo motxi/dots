@@ -33,8 +33,9 @@ rules = [
     { mime = "text/*", use = "edit" },
     { mime = "video/*", use = "play" },
 
+    { url = "*.sh", use = "edit" },
     { url = "*.conf", use = "edit" },
     { url = "*.json", use = "edit" },
-    { url = "*.sh", use = "edit" },
+    { url = "*.toml", use = "edit" },
     { url = "*.html", use = [ "open", "edit" ] },
 ]

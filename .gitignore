@@ -24,8 +24,10 @@
 !.config/mpv/
 !.config/nvim/
 !.config/picom/
+!.config/pipewire/
 !.config/rofi/
 !.config/wireplumber/
 !.config/yazi/
 !.config/user-dirs.dirs
 !.config/user-dirs.locale
+
