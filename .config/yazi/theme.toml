@@ -901,3 +901,4 @@ conds = [
     { if = "exec", text = "", fg = "#8c8c8c" },
     { if = "!dir", text = "", fg = "#8c8c8c" },
 ]
+

@@ -2,3 +2,4 @@
 on = "<C-g>"
 run = 'shell -- rofi -theme docu -show filebrowser -filebrowser-command "ya emit reveal" -filebrowser-directory "$(pwd)"'
 desc = "Grid view"
+

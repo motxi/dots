@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-DIR="${HOME}/Pictures/Screen"
+DIR="${HOME}/Pictures/screen"
 FORMAT='%F_%H%M%S.png'
 
 mkdir --parents "${DIR}"

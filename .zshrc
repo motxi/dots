@@ -107,3 +107,4 @@ export FZF_DEFAULT_OPTS=" \
 
 source <(fzf --zsh) || true
 eval "$(zoxide init zsh --cmd cd || true)"
+

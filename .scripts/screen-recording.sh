@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-DIR="${HOME}/Videos/Screen"
+DIR="${HOME}/Videos/screen"
 FORMAT='%F_%H%M%S.mp4'
 
 mkdir --parents "${DIR}"
